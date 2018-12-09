@@ -7,16 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
     static boolean permission;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+         final AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
             ///LOGIN BUTTON///
 
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         lgnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+        v.startAnimation(buttonClick);
 
                 ///(IF USER IS RENTER)///
                 Intent goToRequests = new Intent(MainActivity.this,requestsList.class);
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.startAnimation(buttonClick);
 
                 //AFTER "REGISTER" BTN CLICK//
                 //CHOOSE RENTING/RENTER///

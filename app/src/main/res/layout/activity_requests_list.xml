@@ -27,14 +27,15 @@
 
         >
         <TextView
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="10dp"
+
             android:fontFamily="@font/font1"
             android:text="Your Requests"
             android:textSize="55sp"
+            android:layout_gravity="center"
             />
 
 

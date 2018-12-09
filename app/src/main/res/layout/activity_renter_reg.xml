@@ -23,14 +23,15 @@
 
 
             <TextView
+                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="45dp"
+
 
                 android:fontFamily="@font/font1"
                 android:text="Registration"
-
+                android:layout_gravity="center"
                 android:textSize="59sp"
 
 

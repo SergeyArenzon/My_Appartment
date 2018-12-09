@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".requestsList" />
         <activity android:name=".rentingReg" />
-        <activity android:name=".renterReg"></activity>
+        <activity android:name=".renterReg" />
+        <activity android:name=".renterRrequest"></activity>
     </application>
 
 </manifest>
