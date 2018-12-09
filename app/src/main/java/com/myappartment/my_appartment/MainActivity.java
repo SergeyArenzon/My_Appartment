@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       
+
             ///LOGIN BUTTON///
 
 
@@ -25,15 +25,19 @@ public class MainActivity extends AppCompatActivity {
         lgnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                ///(IF USER IS RENTER)///
                 Intent goToRequests = new Intent(MainActivity.this,requestsList.class);
-
-
-
-
-
-
-                ///IF USER EXIST///
                 startActivity(goToRequests);
+
+                ///(IF USER IS RENTING)///
+
+
+
+
+
+
 
             }
         });
@@ -57,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
                         // the user clicked on "who are you?"
 
                         if (which == 0) {
-//                            Intent renterReg = new Intent(com.myappartment.my_appartment.MainActivity.this, renterReg.class);
-//                            startActivity(renterReg);
+                            Intent renterReg = new Intent(com.myappartment.my_appartment.MainActivity.this, renterReg.class);
+                            startActivity(renterReg);
                         } else {
-//                            Intent rentingReg = new Intent(com.myappartment.my_appartment.MainActivity.this, rentingReg.class);
-//                            startActivity(rentingReg);
+                           Intent rentingReg = new Intent(com.myappartment.my_appartment.MainActivity.this, rentingReg.class);
+                           startActivity(rentingReg);
 
                         }
 

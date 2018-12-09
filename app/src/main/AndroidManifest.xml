@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".requestsList"></activity>
+        <activity android:name=".requestsList" />
+        <activity android:name=".rentingReg" />
+        <activity android:name=".renterReg"></activity>
     </application>
 
 </manifest>
