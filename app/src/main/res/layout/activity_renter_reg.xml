@@ -38,8 +38,8 @@
                 />
 
 
-
             <EditText
+                android:id="@+id/renterRegUser"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="120dp"
@@ -51,10 +51,9 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:padding="8dp"
-                android:textColorHint="#fff"
 
 
-                />
+                android:textColorHint="#fff" />
 
             <View
                 android:layout_width="match_parent"
@@ -64,6 +63,7 @@
                 />
 
             <EditText
+                android:id="@+id/renterRegPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -75,9 +75,8 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:padding="8dp"
-                android:textColorHint="#fff"
 
-                />
+                android:textColorHint="#fff" />
 
             <View
                 android:layout_width="match_parent"
@@ -85,6 +84,7 @@
                 android:background="#f9d7db" />
 
             <EditText
+                android:id="@+id/renterRegPass1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -96,9 +96,8 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:padding="8dp"
-                android:textColorHint="#fff"
 
-                />
+                android:textColorHint="#fff" />
 
 
             <View
@@ -107,6 +106,7 @@
                 android:background="#f9d7db" />
 
             <EditText
+                android:id="@+id/renterRegName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="35dp"
@@ -118,10 +118,9 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:padding="8dp"
-                android:textColorHint="#fff"
 
 
-                />
+                android:textColorHint="#fff" />
 
             <View
                 android:layout_width="match_parent"

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.myappartment.my_appartment">
+    android:name="android.support.multidex.MultiDexApplication"
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +21,8 @@
         <activity android:name=".requestsList" />
         <activity android:name=".rentingReg" />
         <activity android:name=".renterReg" />
-        <activity android:name=".renterRrequest"></activity>
+        <activity android:name=".renterRrequest" />
+        <activity android:name=".test"></activity>
     </application>
 
 </manifest>
