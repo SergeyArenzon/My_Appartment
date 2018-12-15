@@ -18,11 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".requestsList" />
+        <activity
+            android:name=".requestsList"
+            android:exported="true" />
         <activity android:name=".rentingReg" />
         <activity android:name=".renterReg" />
         <activity android:name=".renterRrequest" />
-        <activity android:name=".test"></activity>
+        <activity android:name=".test" />
+        <activity
+            android:name=".rentingList"
+            android:exported="true" />
+        <activity android:name=".createRequest"
+            android:exported="true"
+            ></activity>
     </application>
 
 </manifest>

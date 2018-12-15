@@ -50,9 +50,9 @@ public class renterReg extends AppCompatActivity {
             public void onClick(View v) {
                 v.startAnimation(buttonClick);
                 ///(if user registration veryfied)///
-                User user = new User(email.getText().toString(),pass.getText().toString(),name.getText().toString(),false);
+                //User user = new User(email.getText().toString(),pass.getText().toString(),name.getText().toString(),false);
                 FirebaseUser User = mAuth.getCurrentUser();
-                mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPass());
+               // mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPass());
 
                 Intent goRequests = new Intent(renterReg.this,requestsList.class);
                 startActivity(goRequests);
