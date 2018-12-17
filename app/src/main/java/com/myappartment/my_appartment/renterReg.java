@@ -1,21 +1,30 @@
 package com.myappartment.my_appartment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class renterReg extends AppCompatActivity {
+    ProgressDialog dialog;
     private FirebaseAuth mAuth;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference db = FirebaseDatabase.getInstance().getReference();
     EditText email,pass,name;
 
 
@@ -30,8 +39,11 @@ public class renterReg extends AppCompatActivity {
         email =(EditText)findViewById(R.id.renterRegUser);
         pass =(EditText)findViewById(R.id.renterRegPass);
         name =(EditText)findViewById(R.id.renterRegName);
+        dialog = new ProgressDialog(renterReg.this);
 
-                    ///CANCLE BUTTON///
+        ///CANCLE BUTTON///
+
+
         cnclBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,22 +53,55 @@ public class renterReg extends AppCompatActivity {
             }
         });
 
-                ///////////////////////////
+        ///////////////////////////
 
 
-                    ///CONFIRM BUTTON///
+        ///CONFIRM BUTTON///
         cfmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                dialog.setMessage("Please wait...");
+                dialog.show();
+
+               final User user = new User(email,pass,name,false);
                 v.startAnimation(buttonClick);
-                ///(if user registration veryfied)///
-                //User user = new User(email.getText().toString(),pass.getText().toString(),name.getText().toString(),false);
-                FirebaseUser User = mAuth.getCurrentUser();
-               // mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPass());
 
-                Intent goRequests = new Intent(renterReg.this,requestsList.class);
-                startActivity(goRequests);
+                mAuth.createUserWithEmailAndPassword(user.getEmail(), pass.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
+
+                                ///CREATED NEW USER SUCCESSFULY///
+
+                                if (task.isSuccessful()) {
+
+                                    db.child("Users").child(user.getEmail().replace(".", "|")).setValue(user);
+                                    dialog.hide();
+                                    Toast.makeText(renterReg.this, "Registered sucsessfull", Toast.LENGTH_LONG).show();
+
+                                   // Intent login = new Intent(EntrySurveyText.this, MainActivity.class);
+                                  //  startActivity(login);
+
+                                }
+                                //End-if isSuccessful
+
+
+                                ///EMAIL ALREADY EXIST///
+                                else {
+                                    try {
+                                        throw task.getException();
+                                    } catch (FirebaseAuthUserCollisionException existEmail) {
+                                        Log.d(user.getEmail(), "Email already exist");
+                                        Toast.makeText(renterReg.this, "Email already exist", Toast.LENGTH_LONG).show();
+                                    } catch (Exception e) {
+                                        Log.d(user.getEmail(), "ssss" + e.getMessage());
+
+                                    }
+                                } //End else
+                            }
+                        });
 
             }
         });

@@ -22,7 +22,8 @@
             android:name=".requestsList"
             android:exported="true" />
         <activity android:name=".rentingReg" />
-        <activity android:name=".renterReg" />
+        <activity android:name=".renterReg"
+            android:exported="true"/>
         <activity android:name=".renterRrequest" />
         <activity android:name=".test" />
         <activity

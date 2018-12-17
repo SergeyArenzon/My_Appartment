@@ -70,16 +70,17 @@
                     />
 
                 <LinearLayout
+                    android:id="@+id/list"
                     android:layout_width="match_parent"
-                    android:layout_height="228dp"
+                    android:layout_height="262dp"
                     android:layout_marginTop="15dp"
 
                     android:background="@drawable/background_login">
 
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/linearLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="384dp"
+                        android:layout_height="116dp"
 
                         tools:layout_editor_absoluteX="9dp"
                         tools:layout_editor_absoluteY="2dp">
@@ -181,7 +182,6 @@
                             android:text="90"
                             app:layout_constraintStart_toEndOf="@+id/textView9"
                             app:layout_constraintTop_toTopOf="parent" />
-
 
                     </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
