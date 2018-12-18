@@ -25,22 +25,23 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText email,pass;
-    ProgressDialog dialog;
+
 
    public void logIn( EditText email, EditText pass){
-       dialog.setMessage("Please wait...");
-       dialog.show();
+
+
        mAuth.signInWithEmailAndPassword(email.getText().toString(),pass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
            @Override
            public void onComplete(@NonNull Task<AuthResult> task) {
-               dialog.hide();
+
+
 
                if(task.isSuccessful()){
 
                    Intent afterLgn = new Intent(MainActivity.this,requestsList.class);
                    startActivity(afterLgn);
                }else{
-                 //  dialog.hide();
+
                    Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                }
 
