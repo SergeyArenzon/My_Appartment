@@ -93,6 +93,7 @@ public class renterReg extends AppCompatActivity {
                                     try {
                                         throw task.getException();
                                     } catch (FirebaseAuthUserCollisionException existEmail) {
+                                        dialog.hide();
                                         Log.d(user.getEmail(), "Email already exist");
                                         Toast.makeText(renterReg.this, "Email already exist", Toast.LENGTH_LONG).show();
                                     } catch (Exception e) {
