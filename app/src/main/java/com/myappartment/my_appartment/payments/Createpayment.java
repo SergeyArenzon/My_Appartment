@@ -60,7 +60,7 @@ public class Createpayment extends AppCompatActivity {
                     Toast.makeText(Createpayment.this
                     ,"PRICE INPUT MUST BE NUMERIC",Toast.LENGTH_SHORT).show();
                 }
-
+/////////////////////
 
             }
 
