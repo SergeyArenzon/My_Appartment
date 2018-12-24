@@ -21,18 +21,18 @@ import com.myappartment.my_appartment.Status;
 public class Createpayment extends AppCompatActivity {
     EditText payment;
     Button create;
-    public boolean isInteger( String input ) {
-        try {
-            Integer.parseInt( input );
-            return true;
-        }
-        catch( Exception e ) {
-            return false;
-        }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent goShowPay = new Intent(Createpayment.this,Showpayments.class);
+        startActivity(goShowPay);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.createpayment);
@@ -60,7 +60,7 @@ public class Createpayment extends AppCompatActivity {
                     Toast.makeText(Createpayment.this
                     ,"PRICE INPUT MUST BE NUMERIC",Toast.LENGTH_SHORT).show();
                 }
-/////////////////////
+
 
             }
 

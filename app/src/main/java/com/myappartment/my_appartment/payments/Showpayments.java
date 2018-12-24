@@ -28,7 +28,11 @@ import com.myappartment.my_appartment.Status;
 import java.util.ArrayList;
 
 public class Showpayments extends AppCompatActivity {
-
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent goMain = new Intent(Showpayments.this,requestsList.class);
+        startActivity(goMain);
+    }
 
     LinearLayout parent;
     TextView bigtit;

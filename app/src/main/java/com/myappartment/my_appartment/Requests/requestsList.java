@@ -16,10 +16,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.myappartment.my_appartment.MainActivity;
 import com.myappartment.my_appartment.Objects.User;
 import com.myappartment.my_appartment.Objects.reqnode;
 import com.myappartment.my_appartment.R;
 import com.myappartment.my_appartment.Status;
+import com.myappartment.my_appartment.payments.Createpayment;
 import com.myappartment.my_appartment.payments.Monthpayment;
 import com.myappartment.my_appartment.payments.Showpayments;
 
@@ -27,6 +29,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class requestsList extends AppCompatActivity {
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent goMain = new Intent(requestsList.this,MainActivity.class);
+        startActivity(goMain);
+    }
 
     LinearLayout parent;
     Button manageradd;
