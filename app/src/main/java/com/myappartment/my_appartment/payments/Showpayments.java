@@ -96,7 +96,7 @@ public class Showpayments extends AppCompatActivity {
 
                     btn = new Button(Showpayments.this);
 
-                    btn.setBackgroundResource(R.drawable.background_btn2);
+                    btn.setBackgroundResource(R.drawable.mybtn);
 
 
                     String pre="";

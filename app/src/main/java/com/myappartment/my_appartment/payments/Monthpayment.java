@@ -1,5 +1,6 @@
 package com.myappartment.my_appartment.payments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -13,9 +14,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.myappartment.my_appartment.Home;
 import com.myappartment.my_appartment.Objects.Payment;
 import com.myappartment.my_appartment.Objects.User;
 import com.myappartment.my_appartment.R;
+import com.myappartment.my_appartment.Requests.requestsList;
 import com.myappartment.my_appartment.Status;
 
 import java.util.ArrayList;
@@ -23,18 +26,29 @@ import java.util.HashMap;
 
 public class Monthpayment extends AppCompatActivity {
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Monthpayment.this,requestsList.class);
+        startActivity(intent);
+    }
+
     public static HashMap<String, Integer> monthpeople = new HashMap<String, Integer>();
     public static ArrayList<String> subjects=new ArrayList<>();
     public static int global_amount;
     public String current_req;
     public int counter=0;
+    public int counterinsdieread=0;
     public static boolean firsttime=true;
+    public  boolean buttnotready=true;
 
     LinearLayout parent;
     LinearLayout.LayoutParams params;
     Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
 
         super.onCreate(savedInstanceState);
@@ -54,7 +68,7 @@ public class Monthpayment extends AppCompatActivity {
             Log.d("which now:","start insidepaym:"+g);
 
             run_inside_payment();
-
+            counter++;
         }
 
 
@@ -67,6 +81,7 @@ public class Monthpayment extends AppCompatActivity {
 
     public void run_inside_payment()
     {
+        current_req = subjects.get(counter);
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Payment/"+Status.dira+"/"+current_req);
         mDatabase
@@ -74,7 +89,7 @@ public class Monthpayment extends AppCompatActivity {
                     @Override
                     public  void onDataChange(DataSnapshot dataSnapshot) {
 
-                        current_req = subjects.get(counter++);
+
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
                             if(firsttime) {
@@ -87,7 +102,7 @@ public class Monthpayment extends AppCompatActivity {
                                 currentpayment = currentpayment + untilnow_payment;
                                 monthpeople.put(name, currentpayment);
 
-                                global_amount = global_amount + currentpayment;
+                                global_amount = global_amount + p.paid;
                             }
                             else{
                                 Payment p = snapshot.getValue(Payment.class);
@@ -95,9 +110,11 @@ public class Monthpayment extends AppCompatActivity {
                             }
 
                         }
+
                        //////-----------------------------
-                        Log.d("which now:","current:"+current_req+"sublast:"+subjects.get(subjects.size()-1));
-                        if(current_req.equals(subjects.get(subjects.size()-1))) {
+                        counterinsdieread++;
+                        Log.d("which now:","subjectsize:"+subjects.size()+"counterinread:"+counterinsdieread);
+                        if((counterinsdieread==subjects.size())&buttnotready) {
 
                             for (String name : Monthpayment.monthpeople.keySet()) {
                                 Log.d("which nowgggggggg:", name);
@@ -107,7 +124,7 @@ public class Monthpayment extends AppCompatActivity {
 
                                 btn = new Button(Monthpayment.this);
 
-                                btn.setBackgroundResource(R.drawable.background_btn2);
+                                btn.setBackgroundResource(R.drawable.mybtn);
                                 String pre2="";
                                 if(String.valueOf(pre).length()>4)
                                 {
@@ -123,12 +140,15 @@ public class Monthpayment extends AppCompatActivity {
                                 btn.setText(name + ",paid:" + b + " ," + pre2+"%");
 
                                 params.setMargins(0, 20, 0, 20);
+
                                 parent.addView(btn, params);
 
                             }
+                            buttnotready=false;
                             firsttime=false;
                         }
                         return;
+
 
 
 

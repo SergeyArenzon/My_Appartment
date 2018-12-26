@@ -3,6 +3,7 @@ package com.myappartment.my_appartment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,7 @@ import com.myappartment.my_appartment.Requests.requestsList;
 import com.myappartment.my_appartment.SignUp.renterReg;
 
 public class MainActivity extends AppCompatActivity {
+
     
     public static boolean manager ;
     private FirebaseAuth mAuth;
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
       if(Status.manager)
       {
-          System.out.println("THIS IS MANGER");
+          //System.out.println("THIS IS MANGER");
          // Toast.makeText(getApplicationContext(),"YOU ARE MANAGER",Toast.LENGTH_SHORT).show();
 
                        Intent goManager = new Intent(MainActivity.this,requestsList.class);
@@ -154,10 +156,20 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
+
                 v.startAnimation(buttonClick);
-            logIn(email,pass);
+
+                if(email.getText().toString().matches("")&&pass.getText().toString().matches("")) {
+
+                    email = (EditText) findViewById(R.id.userLgn);
+                    pass = (EditText) findViewById(R.id.passLgn);
 
 
+
+                } else
+                    {
+                        logIn(email, pass);
+                    }
 
 
             }
@@ -176,8 +188,9 @@ public class MainActivity extends AppCompatActivity {
 
                 //AFTER "REGISTER" BTN CLICK//
                 //CHOOSE RENTING/RENTER///
-                String[] option = {"Manger", "Regular"};
+                String[] option = {"Manager", "Regular"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
                 builder.setTitle("Who are you?");
 
                 builder.setItems(option, new DialogInterface.OnClickListener() {
@@ -200,6 +213,8 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+
                 builder.show();
 
 

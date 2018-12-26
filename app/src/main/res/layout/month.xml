@@ -27,7 +27,16 @@
 
         >
 
-        <EditText
+        <Button
+            android:id="@+id/bts"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:drawableEnd="@drawable/logout"
+            android:drawableRight="@drawable/logout"
+            tools:ignore="RtlCompat" />
+        <TextView
             android:id="@+id/bigtitle"
             android:layout_width="302dp"
             android:layout_height="64dp"

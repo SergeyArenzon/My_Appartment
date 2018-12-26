@@ -23,8 +23,29 @@ public class createRequest extends AppCompatActivity {
     EditText title, price;
     Button create, cancel;
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent goMain = new Intent(createRequest.this,requestsList.class);
+        startActivity(goMain);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_request);
@@ -47,12 +68,22 @@ public class createRequest extends AppCompatActivity {
 
         });
 
+        cancel = (Button)findViewById(R.id.reqCancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goList = new Intent(createRequest.this,requestsList.class);
+                startActivity(goList);
+
+            }
+        });
+
 
 
 
     }
 
-    ;
+
     public createRequest()
     {}
     public  void createreq(String title,String price) {

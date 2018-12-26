@@ -84,15 +84,6 @@
                 android:background="#f9d7db"
                 />
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="#fff"
-                android:text="Remember me"
-                android:padding="7dp"
-                />
-
             <Button
                 android:id="@+id/loginBtn"
                 style="@style/Base.TextAppearance.AppCompat.Body1"
@@ -118,17 +109,6 @@
                 android:textColor="#fff"
 
                 android:textSize="18sp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Forgot Your Password?"
-                android:textColor="#fff"
-                style="@style/Base.TextAppearance.AppCompat.Body2"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp"
-                android:clickable="true"
-
-                />
 
 
         </LinearLayout>

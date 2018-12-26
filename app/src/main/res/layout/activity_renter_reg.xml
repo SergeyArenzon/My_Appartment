@@ -89,14 +89,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_lock_white_24dp"
+                android:inputType="textEmailAddress"
                 android:drawablePadding="12dp"
                 android:ems="10"
                 android:hint="Appartment Name"
-                android:inputType="textPassword"
                 android:maxLines="1"
                 android:padding="8dp"
-
+                android:layout_marginLeft="35dp"
                 android:textColorHint="#fff" />
 
 

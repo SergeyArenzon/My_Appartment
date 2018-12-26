@@ -26,6 +26,14 @@
 
 
         >
+        <Button
+            android:id="@+id/bts"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:drawableEnd="@drawable/logout"
+            android:drawableRight="@drawable/logout" />
 
         <TextView
             android:id="@+id/bigtitle"
@@ -45,7 +53,9 @@
             android:id="@+id/buttonpayment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Payment+" />
+            android:text="Add Payment+"
+            android:textColor="#ffff"
+            android:background="@drawable/bluebtn"/>
 
 
     </LinearLayout>
