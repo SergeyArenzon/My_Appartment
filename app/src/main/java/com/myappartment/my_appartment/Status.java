@@ -2,9 +2,17 @@ package com.myappartment.my_appartment;
 
 import com.myappartment.my_appartment.Objects.reqnode;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 public class Status {
+=======
+
+import java.util.ArrayList;
+
+public class Status {
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
     //---------
       public static String name="";
       public static String email="";

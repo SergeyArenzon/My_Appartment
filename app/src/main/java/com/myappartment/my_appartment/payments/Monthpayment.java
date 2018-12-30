@@ -14,6 +14,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+<<<<<<< HEAD
+=======
+import com.myappartment.my_appartment.Home;
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 import com.myappartment.my_appartment.Objects.Payment;
 import com.myappartment.my_appartment.Objects.User;
 import com.myappartment.my_appartment.R;
@@ -24,6 +28,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Monthpayment extends AppCompatActivity {
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -47,6 +55,11 @@ public class Monthpayment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
         super.onCreate(savedInstanceState);
         setContentView(R.layout.month);
         parent = (LinearLayout) findViewById(R.id.ll_parent);
@@ -78,6 +91,10 @@ public class Monthpayment extends AppCompatActivity {
     public void run_inside_payment()
     {
         current_req = subjects.get(counter);
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Payment/"+Status.dira+"/"+current_req);
         mDatabase
                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -101,11 +118,19 @@ public class Monthpayment extends AppCompatActivity {
                             }
                             else{
                                 Payment p = snapshot.getValue(Payment.class);
+<<<<<<< HEAD
 
                                 global_amount = global_amount +p.paid ;
                             }
 
                         }
+=======
+                                global_amount = global_amount +p.paid +monthpeople.get(p.name);
+                            }
+
+                        }
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
                        //////-----------------------------
                         counterinsdieread++;
                         Log.d("which now:","subjectsize:"+subjects.size()+"counterinread:"+counterinsdieread);
@@ -135,16 +160,28 @@ public class Monthpayment extends AppCompatActivity {
                                 btn.setText(name + ",paid:" + b + " ," + pre2+"%");
 
                                 params.setMargins(0, 20, 0, 20);
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
                                 parent.addView(btn, params);
 
                             }
                             buttnotready=false;
+<<<<<<< HEAD
                             firsttime=true;
+=======
+                            firsttime=false;
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
                         }
                         return;
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {

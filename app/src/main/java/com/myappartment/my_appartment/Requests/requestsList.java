@@ -11,11 +11,21 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+=======
+import com.google.android.gms.flags.Flag;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+<<<<<<< HEAD
+=======
+import com.myappartment.my_appartment.Home;
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 import com.myappartment.my_appartment.MainActivity;
 import com.myappartment.my_appartment.Objects.User;
 import com.myappartment.my_appartment.Objects.reqnode;
@@ -29,6 +39,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class requestsList extends AppCompatActivity {
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
     public void onBackPressed() {
         super.onBackPressed();
         Intent goMain = new Intent(requestsList.this,MainActivity.class);
@@ -43,12 +60,22 @@ public class requestsList extends AppCompatActivity {
     public  ArrayList<reqnode> requests=new ArrayList<reqnode>();
     @Override
     public  void onCreate(Bundle savedInstanceState) {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
         final AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requests_list);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
         //------setbutton---------
         manageradd=(Button)findViewById(R.id.addreqmanager);
         manageradd.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +87,10 @@ public class requestsList extends AppCompatActivity {
                 {
                     Intent goToReq = new Intent(requestsList.this,createRequest.class);
                     startActivity(goToReq);
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
                 }
 
                 else
@@ -71,6 +102,10 @@ public class requestsList extends AppCompatActivity {
 
 
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
         monthbutton=(Button)findViewById(R.id.month);
         monthbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +130,18 @@ public class requestsList extends AppCompatActivity {
         {
             @Override
             public  void onDataChange(DataSnapshot dataSnapshot) {
+<<<<<<< HEAD
                 //int size = (int)dataSnapshot.getChildrenCount();
+=======
+                ////////////////////////////////////////////
+
+
+
+                ////////////////////////////////////////////
+
+
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
                   counter=0;
                 parent = (LinearLayout)findViewById(R.id.ll_parent);
                 Button btn;
@@ -153,7 +199,19 @@ public class requestsList extends AppCompatActivity {
       getallpayments();
 
 
+<<<<<<< HEAD
 
+=======
+        Button  btn =(Button)findViewById(R.id.bts);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent goLogin = new Intent(requestsList.this,MainActivity.class);
+                startActivity(goLogin);
+            }
+        });
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 
     }
 
@@ -264,4 +322,12 @@ public class requestsList extends AppCompatActivity {
                    }
                });
    }
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 }

@@ -24,22 +24,33 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.myappartment.my_appartment.Objects.User;
+<<<<<<< HEAD
 import com.myappartment.my_appartment.Requests.createRequest;
+=======
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 import com.myappartment.my_appartment.Requests.requestsList;
 import com.myappartment.my_appartment.SignUp.renterReg;
 
 public class MainActivity extends AppCompatActivity {
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
     
     public static boolean manager ;
     private FirebaseAuth mAuth;
     EditText email,pass;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users");
     int check=1;
+<<<<<<< HEAD
     public void onBackPressed() {
         super.onBackPressed();
         Intent goMain = new Intent(MainActivity.this,MainActivity.class);
         startActivity(goMain);
     }
+=======
+
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 
     public void checkIfManager(){
 
@@ -89,7 +100,11 @@ public class MainActivity extends AppCompatActivity {
 
       if(Status.manager)
       {
+<<<<<<< HEAD
           System.out.println("THIS IS MANGER");
+=======
+          //System.out.println("THIS IS MANGER");
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
          // Toast.makeText(getApplicationContext(),"YOU ARE MANAGER",Toast.LENGTH_SHORT).show();
 
                        Intent goManager = new Intent(MainActivity.this,requestsList.class);
@@ -160,10 +175,27 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
+<<<<<<< HEAD
                 v.startAnimation(buttonClick);
             logIn(email,pass);
 
 
+=======
+
+                v.startAnimation(buttonClick);
+
+                if(email.getText().toString().matches("")&&pass.getText().toString().matches("")) {
+
+                    email = (EditText) findViewById(R.id.userLgn);
+                    pass = (EditText) findViewById(R.id.passLgn);
+
+
+
+                } else
+                    {
+                        logIn(email, pass);
+                    }
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 
 
             }

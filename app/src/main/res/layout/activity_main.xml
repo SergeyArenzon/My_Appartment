@@ -25,6 +25,7 @@
 
 
             <ImageView
+<<<<<<< HEAD
                 android:layout_width="271dp"
                 android:layout_height="197dp"
                 android:layout_gravity="center_horizontal"
@@ -34,6 +35,17 @@
                 android:padding="5dp"
                 android:paddingTop="16dp"
                 android:src="@drawable/house" />
+=======
+                android:layout_width="240dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="16dp"
+
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="20dp"
+                android:padding="5dp"
+                android:src="@drawable/houseblack" />
+>>>>>>> d7a385687d4a86f3ed59d677db2ce72f75e6387c
 
             <EditText
                 android:id="@+id/userLgn"
