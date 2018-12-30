@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.myappartment.my_appartment.Objects.User;
+import com.myappartment.my_appartment.Requests.createRequest;
 import com.myappartment.my_appartment.Requests.requestsList;
 import com.myappartment.my_appartment.SignUp.renterReg;
 
@@ -34,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
     EditText email,pass;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users");
     int check=1;
-
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent goMain = new Intent(MainActivity.this,MainActivity.class);
+        startActivity(goMain);
+    }
 
     public void checkIfManager(){
 
