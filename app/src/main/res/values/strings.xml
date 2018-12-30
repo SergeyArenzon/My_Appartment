@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My_Appartment</string>
+    <string name="login">LOGIN</string>
+    <string name="todo">TODO</string>
+    <string name="button">Button</string>
+    <string name="register">REGISTER</string>
+    <string name="title_activity_create_request">createRequest</string>
+</resources>
