@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
        checkIfManager();
 
+
          mAuth.signInWithEmailAndPassword(email.getText().toString(),pass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
            @Override
            public void onComplete(@NonNull Task<AuthResult> task) {
@@ -161,7 +162,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 v.startAnimation(buttonClick);
-            logIn(email,pass);
+
+
+
+                if(email.getText().toString().matches("")||pass.getText().toString().matches("")) {
+
+                    email = (EditText) findViewById(R.id.userLgn);
+                    pass = (EditText) findViewById(R.id.passLgn);
+
+
+
+                } else
+                {
+                    logIn(email, pass);
+                }
 
 
 
