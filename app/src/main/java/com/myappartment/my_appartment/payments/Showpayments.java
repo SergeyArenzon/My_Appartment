@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -28,6 +30,7 @@ import com.myappartment.my_appartment.Status;
 import java.util.ArrayList;
 
 public class Showpayments extends AppCompatActivity {
+
     public void onBackPressed() {
         super.onBackPressed();
         Intent goMain = new Intent(Showpayments.this,requestsList.class);

@@ -14,7 +14,7 @@ public class Status {
      public static ArrayList<reqnode> requests2=new ArrayList<reqnode>();
      //-----------------------
      public static String title="";
-    public static int price;
+     public static int price;
 
     //-------
     public Status()

@@ -28,6 +28,8 @@ import com.myappartment.my_appartment.Requests.createRequest;
 import com.myappartment.my_appartment.Requests.requestsList;
 import com.myappartment.my_appartment.SignUp.renterReg;
 
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
     
     public static boolean manager ;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public  void onDataChange(DataSnapshot dataSnapshot) {
+
                         //int size = (int)dataSnapshot.getChildrenCount();
 
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
@@ -137,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
     //Intent goToRequests;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         mAuth = FirebaseAuth.getInstance();
 
 
