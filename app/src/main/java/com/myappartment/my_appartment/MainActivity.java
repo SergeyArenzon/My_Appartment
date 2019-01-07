@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     pass = (EditText) findViewById(R.id.passLgn);
 
 
-
+                    Toast.makeText(MainActivity.this,"ONE OR MORE FIELDS IS EMPTY",Toast.LENGTH_SHORT).show();
                 } else
                 {
                     logIn(email, pass);

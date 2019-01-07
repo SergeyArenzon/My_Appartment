@@ -64,13 +64,22 @@ public class renterReg extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                dialog.setMessage("Please wait...");
-                dialog.show();
                 boolean d=MainActivity.manager;
 
                final User user = new User(email,pass,name,d,appName);
                 v.startAnimation(buttonClick);
-
+                /////////////////REGISTRATION EMPTY FIELDS EXCEPTION FIX////////////////
+                if(email.getText().toString().matches("")||pass.getText().toString().matches("")||name.getText().toString().matches("")
+                ||appName.getText().toString().matches("")){
+                    email =(EditText)findViewById(R.id.renterRegUser);
+                    pass =(EditText)findViewById(R.id.renterRegPass);
+                    name =(EditText)findViewById(R.id.renterRegName);
+                    appName = (EditText)findViewById(R.id.appName);
+                   Toast.makeText(renterReg.this,"ONE OR MORE FIELDS IS EMPTY",Toast.LENGTH_SHORT).show();
+                }else{
+                    dialog.setMessage("Please wait...");
+                    dialog.show();
+                ////////////////////////////////////////////////////////////////////
                 mAuth.createUserWithEmailAndPassword(user.getEmail(), pass.getText().toString())
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -108,7 +117,7 @@ public class renterReg extends AppCompatActivity {
                                     }
                                 } //End else
                             }
-                        });
+                        });}
 
             }
         });
