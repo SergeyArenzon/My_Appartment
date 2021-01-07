@@ -13,4 +13,4 @@ MyApartment is android application using Firebase Realtime Database and Firebase
 2. Can watch overall payers stats.
 
 # App flow:
-![hippo](https://media.giphy.com/media/0CEYkRlYzFSlGGnIiE/giphy.gif)
+![flow](https://media.giphy.com/media/0CEYkRlYzFSlGGnIiE/giphy.gif)
