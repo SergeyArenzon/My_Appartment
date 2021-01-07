@@ -1,5 +1,5 @@
 # MyApartment
-MyApartment is android application using Firebase Realtime Database and Firebase Authentication and made for managing apartment expenses by roomates.
+MyApartment is android Java application using Firebase Realtime Database and Firebase Authentication and made for managing apartment expenses by roomates.
 
 # Manager roomate user functionalities:
 1. Can create "room" for expenses.
